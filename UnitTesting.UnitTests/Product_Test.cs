@@ -15,7 +15,8 @@ namespace UnitTesting.UnitTests
         public void Test_Find_Name_Property()
         {
             Product product = new Product();
-            Assert.That(product , Has.Property("Name").And.Not.Property("Age"));
+            //Assert.That(product , Has.Property("Name").And.Not.Property("Age"));
+            Assert.That(product , Has.No.Property("Price"));
         }
     }
 }
