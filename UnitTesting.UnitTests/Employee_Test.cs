@@ -10,6 +10,13 @@ using UnitTesting.Project;
 
 namespace UnitTesting.UnitTests
 {
+    /// <summary>
+    /// this TLD Test Last Development
+    /// 
+    ///  TDD Test Driven Development (Test Befor Code ) 
+    ///  Test => Fail => code to pass this testCase
+    /// 
+    /// </summary>
     [TestFixture]
     public class Employee_Test
     {
@@ -65,13 +72,28 @@ namespace UnitTesting.UnitTests
         //    return emp.IsSeniorCitizen(age);
         //}
 
+        //[Test]
+        //[Sequential]
+        //public void testEmployeeIsSeniorcitizen([Values(50 , 60 , 70)] int age , [Values(false ,true,true)]bool expectedResult)
+        //{
+        //    var result = emp.IsSeniorCitizen(age);
+        //    Assert.That(expectedResult, Is.EqualTo(result));
+        //}
+
+        //[Test]
+        //public void testEmployeeIsSeniorcitizen([Range(50, 60,2)] int age, [Values(true)] bool expectedResult)
+        //{
+        //    var result = emp.IsSeniorCitizen(age);
+        //    Assert.That(expectedResult, Is.EqualTo(result));
+        //}
+
         [Test]
-        [Sequential]
-        public void testEmployeeIsSeniorcitizen([Values(50 , 60 , 70)] int age , [Values(false ,true,true)]bool expectedResult)
+        public void testEmployeeIsSeniorcitizen([Random(40 ,80 ,5,Distinct =true)] int age, [Values(true)] bool expectedResult)
         {
             var result = emp.IsSeniorCitizen(age);
             Assert.That(expectedResult, Is.EqualTo(result));
         }
+
 
     }
     public class TestData :IEnumerable
