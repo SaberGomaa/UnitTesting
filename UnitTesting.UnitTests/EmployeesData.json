@@ -1,0 +1,19 @@
+[
+  {
+    "age": 60,
+    "expectedResult": true
+  },
+
+  {
+    "age": 71,
+    "expectedResult": true
+  },
+  {
+    "age": 40,
+    "expectedResult": false
+  },
+  {
+    "age": 50,
+    "expectedResult": false
+  }
+]
