@@ -11,23 +11,39 @@ namespace UnitTesting.UnitTests
     [TestFixture]
     public class Product_Test
     {
+
+        Product product;
+
+        [SetUp]
+        public void SetUp()
+        {
+            product = new Product();
+        }
+
         [Test]
         [Ignore("For Dev Changes" , Until ="2023-7-30 12:03PM")]
         public void Test_Find_Name_Property()
         {
-            Product product = new Product();
             //Assert.That(product , Has.Property("Name").And.Not.Property("Age"));
             Assert.That(product , Has.No.Property("Price"));
         }
 
         [Test]
-        public void Check_Product_class()
+        [Category("First Class")]
+        public void Check_Product_First_Class()
         {
-            Product product = new Product();
             var result = product.ReturnProductClassBasedOnPrice(1100);
 
-            //Assert.That(result, Is.EqualTo(ProductClassEnum.SecondClass.ToString()));
             Assert.That(result, Is.EqualTo(ProductClassEnum.FirstClass.ToString()));
+        }
+
+        [Test]
+        [Category("Second Class")]
+        public void Check_Product_Second_Class()
+        {
+            var result = product.ReturnProductClassBasedOnPrice(900);
+
+            Assert.That(result, Is.EqualTo(ProductClassEnum.SecondClass.ToString()));
         }
 
     }
