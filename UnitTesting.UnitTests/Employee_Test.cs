@@ -37,15 +37,24 @@ namespace UnitTesting.UnitTests
         //    Assert.IsFalse(res);
         //}
 
-        [Test]
-        [TestCase(60 , true)]
-        [TestCase(70 , true)]
-        [TestCase(50 , false)]
-        public void TestEmployeeIsSeniorCitizen(int age , bool expectedValue)
-        {
-            var result = emp.IsSeniorCitizen(age);
-            Assert.AreEqual(expectedValue, result);
-        }
+        //[Test]
+        //[TestCase(60 , true)]
+        //[TestCase(70 , true)]
+        //[TestCase(50 , false)]
+        //public void TestEmployeeIsSeniorCitizen(int age , bool expectedValue)
+        //{
+        //    var result = emp.IsSeniorCitizen(age);
+        //    Assert.AreEqual(expectedValue, result);
+        //}
         
+        [Test]
+        [TestCase(60 , ExpectedResult = true)]
+        [TestCase(70 , ExpectedResult = true)]
+        [TestCase(50 , ExpectedResult = false)]
+        public bool TestEmployeeIsSeniorCitizen(int age)
+        {
+            return emp.IsSeniorCitizen(age);
+        }
+
     }
 }
