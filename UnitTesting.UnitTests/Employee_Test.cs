@@ -58,12 +58,19 @@ namespace UnitTesting.UnitTests
         //    return emp.IsSeniorCitizen(age);
         //}
 
+        //[Test]
+        //[TestCaseSource(typeof(TestData))]
+        //public bool TestEmployeeIsSeniorCitizen(int age)
+        //{
+        //    return emp.IsSeniorCitizen(age);
+        //}
 
         [Test]
-        [TestCaseSource(typeof(TestData))]
-        public bool TestEmployeeIsSeniorCitizen(int age)
+        [Sequential]
+        public void testEmployeeIsSeniorcitizen([Values(50 , 60 , 70)] int age , [Values(false ,true,true)]bool expectedResult)
         {
-            return emp.IsSeniorCitizen(age);
+            var result = emp.IsSeniorCitizen(age);
+            Assert.That(expectedResult, Is.EqualTo(result));
         }
 
     }
