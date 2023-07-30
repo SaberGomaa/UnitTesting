@@ -20,6 +20,13 @@ namespace UnitTesting.UnitTests
             product = new Product();
         }
 
+        [TearDown]
+        public void TearDown()
+        {
+            // any code to do after finsh Test
+            //  disconnect DB
+        }
+
         [Test]
         [Ignore("For Dev Changes" , Until ="2023-7-30 12:03PM")]
         public void Test_Find_Name_Property()
