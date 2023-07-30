@@ -20,6 +20,18 @@ namespace UnitTesting.UnitTests
             product = new Product();
         }
 
+        [OneTimeSetUp] 
+        public void OneTimeSetUp() 
+        {
+            // one time before all test cases
+        }
+
+        [OneTimeTearDown] 
+        public void OneTimeTearDown()
+        {
+            // one time after all test cases
+        }
+
         [TearDown]
         public void TearDown()
         {
