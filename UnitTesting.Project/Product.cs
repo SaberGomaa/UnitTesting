@@ -10,5 +10,12 @@ namespace UnitTesting.Project
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public string ReturnProductClassBasedOnPrice(int Price)
+        {
+            return Price > 1000 ? 
+                ProductClassEnum.FirstClass.ToString() :
+                ProductClassEnum.SecondClass.ToString();  
+        }
     }
 }
