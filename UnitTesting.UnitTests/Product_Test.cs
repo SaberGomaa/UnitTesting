@@ -15,7 +15,7 @@ namespace UnitTesting.UnitTests
         Product product;
 
         [SetUp]
-        public void SetUp()
+        public void Setup()
         {
             product = new Product();
         }
